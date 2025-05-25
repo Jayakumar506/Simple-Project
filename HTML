@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Production Services</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="app-container">
+
+        <!-- Home Screen -->
+        <section class="screen" id="homeScreen">
+            <div class="header-section">
+                <div class="header-bg"></div>
+                <div class="header-content">
+                    <div class="header-top">
+                        <input type="text" class="search-bar" placeholder="Search 'Punjabi Lyrics'">
+                        <button class="profile-btn" aria-label="Profile"><span>&#128100;</span></button>
+                    </div>
+                    <div class="promo-section">
+                        <div class="promo-icons">
+                            <span class="icon-disc"></span>
+                            <span class="icon-piano"></span>
+                        </div>
+                        <h2>Claim your <span class="highlight">Free Demo</span> <br> for custom Music Production</h2>
+                        <button class="book-btn" id="bookBtn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="services-section">
+                <h3>Hire hand-picked Pros for popular music services</h3>
+                <ul class="services-list">
+                    <li class="service-card" data-service="Music Production">
+                        <div class="icon music"></div>
+                        <div>
+                            <div class="service-title">Music Production</div>
+                            <div class="service-desc">Custom instrumentals & film scoring</div>
+                        </div>
+                        <button class="arrow-btn" aria-label="Go to Music Production">&#9654;</button>
+                    </li>
+                    <li class="service-card" data-service="Mixing & Mastering">
+                        <div class="icon mixing"></div>
+                        <div>
+                            <div class="service-title">Mixing & Mastering</div>
+                            <div class="service-desc">Make your tracks Radio-ready</div>
+                        </div>
+                        <button class="arrow-btn" aria-label="Go to Mixing & Mastering">&#9654;</button>
+                    </li>
+                    <li class="service-card" data-service="Lyrics Writing">
+                        <div class="icon lyrics"></div>
+                        <div>
+                            <div class="service-title">Lyrics Writing</div>
+                            <div class="service-desc">Turn feelings into lyrics</div>
+                        </div>
+                        <button class="arrow-btn" aria-label="Go to Lyrics Writing">&#9654;</button>
+                    </li>
+                    <li class="service-card" data-service="Vocals">
+                        <div class="icon vocals"></div>
+                        <div>
+                            <div class="service-title">Vocals</div>
+                            <div class="service-desc">Vocalists that bring your lyrics to life</div>
+                        </div>
+                        <button class="arrow-btn" aria-label="Go to Vocals">&#9654;</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Timeline Screen -->
+        <section class="screen" id="timelineScreen" style="display:none;">
+            <div class="timeline-header">
+                <h2>Timeline</h2>
+            </div>
+            <ul class="timeline-list">
+                <li>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-title">New Song Released: "Dreamscape"</span>
+                        <span class="timeline-date">2025-05-22</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-title">Demo booked by Alice</span>
+                        <span class="timeline-date">2025-05-21</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-title">Project "Epic Beats" completed</span>
+                        <span class="timeline-date">2025-05-19</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Projects/Songs Screen -->
+        <section class="screen" id="projectsScreen" style="display:none;">
+            <div class="projects-header">
+                <h2>Projects & Songs</h2>
+            </div>
+            <ul class="songs-list">
+                <li class="song-card">
+                    <div class="song-info">
+                        <span class="song-title">Dreamscape</span>
+                        <span class="song-artist">by Prama</span>
+                    </div>
+                    <button class="play-btn" aria-label="Play Dreamscape">
+                        <span class="play-icon">&#9658;</span>
+                        <span class="pause-icon" style="display:none;">&#10073;&#10073;</span>
+                    </button>
+                    <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="none"></audio>
+                </li>
+                <li class="song-card">
+                    <div class="song-info">
+                        <span class="song-title">Epic Beats</span>
+                        <span class="song-artist">by Prama</span>
+                    </div>
+                    <button class="play-btn" aria-label="Play Epic Beats">
+                        <span class="play-icon">&#9658;</span>
+                        <span class="pause-icon" style="display:none;">&#10073;&#10073;</span>
+                    </button>
+                    <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" preload="none"></audio>
+                </li>
+                <li class="song-card">
+                    <div class="song-info">
+                        <span class="song-title">Lyric Magic</span>
+                        <span class="song-artist">by Prama</span>
+                    </div>
+                    <button class="play-btn" aria-label="Play Lyric Magic">
+                        <span class="play-icon">&#9658;</span>
+                        <span class="pause-icon" style="display:none;">&#10073;&#10073;</span>
+                    </button>
+                    <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" preload="none"></audio>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Profile Screen -->
+        <section class="screen" id="profileScreen" style="display:none;">
+            <div class="profile-header">
+                <h2>Your Profile</h2>
+            </div>
+            <div class="profile-info">
+                <div class="profile-avatar">&#128100;</div>
+                <div>
+                    <div class="profile-name">Prama1421</div>
+                    <div class="profile-email">prama@example.com</div>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button class="profile-action-btn">Edit Profile</button>
+                <button class="profile-action-btn">Settings</button>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" aria-label="Home" data-target="homeScreen">
+                <span class="nav-icon">&#8962;</span>
+                <span class="nav-label">Home</span>
+            </button>
+            <button class="nav-btn" aria-label="Timeline" data-target="timelineScreen">
+                <span class="nav-icon">&#9835;</span>
+                <span class="nav-label">Timeline</span>
+            </button>
+            <button class="nav-btn" aria-label="Projects" data-target="projectsScreen">
+                <span class="nav-icon">&#128196;</span>
+                <span class="nav-label">Projects</span>
+            </button>
+            <button class="nav-btn" aria-label="Profile" data-target="profileScreen">
+                <span class="nav-icon">&#128100;</span>
+                <span class="nav-label">Profile</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Modal for Book Now -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3>Book a Free Demo</h3>
+            <form id="demoForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="success-msg" id="successMsg" style="display:none;">Thank you! We will contact you soon.</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

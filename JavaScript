@@ -1,0 +1,106 @@
+
+// Modal functionality for Book Now
+const bookBtn = document.getElementById('bookBtn');
+const modal = document.getElementById('modal');
+const closeModal = document.getElementById('closeModal');
+const demoForm = document.getElementById('demoForm');
+const successMsg = document.getElementById('successMsg');
+
+// Open modal
+bookBtn.addEventListener('click', () => {
+    modal.classList.add('show');
+    successMsg.style.display = 'none';
+    demoForm.style.display = 'block';
+});
+
+// Close modal
+closeModal.addEventListener('click', () => {
+    modal.classList.remove('show');
+});
+
+// Close modal on outside click
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('show');
+    }
+});
+
+// Demo form submit
+demoForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    demoForm.style.display = 'none';
+    successMsg.style.display = 'block';
+    setTimeout(() => {
+        modal.classList.remove('show');
+    }, 1800);
+});
+
+// Navigation (tab switching)
+const navBtns = document.querySelectorAll('.nav-btn');
+const screens = document.querySelectorAll('.screen');
+navBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        navBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        screens.forEach(s => s.style.display = 'none');
+        const targetId = btn.getAttribute('data-target');
+        document.getElementById(targetId).style.display = '';
+    });
+});
+
+// Service card navigation (simulate navigation/action)
+document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => {
+        alert('Opening ' + card.dataset.service + ' details...');
+    });
+});
+document.querySelectorAll('.arrow-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        alert('Navigating to ' + btn.parentElement.dataset.service + ' page...');
+    });
+});
+
+// SONG PLAYER FUNCTIONALITY
+let currentAudio = null;
+let currentBtn = null;
+document.querySelectorAll('.play-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const audio = btn.parentElement.querySelector('audio');
+        // Pause previous
+        if (currentAudio && currentAudio !== audio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            if (currentBtn) {
+                currentBtn.classList.remove('is-playing');
+                currentBtn.querySelector('.play-icon').style.display = '';
+                currentBtn.querySelector('.pause-icon').style.display = 'none';
+            }
+        }
+        // Play or pause
+        if (audio.paused) {
+            audio.play();
+            btn.classList.add('is-playing');
+            btn.querySelector('.play-icon').style.display = 'none';
+            btn.querySelector('.pause-icon').style.display = '';
+            currentAudio = audio;
+            currentBtn = btn;
+        } else {
+            audio.pause();
+            btn.classList.remove('is-playing');
+            btn.querySelector('.play-icon').style.display = '';
+            btn.querySelector('.pause-icon').style.display = 'none';
+            currentAudio = null;
+            currentBtn = null;
+        }
+        // When audio ends
+        audio.onended = function() {
+            btn.classList.remove('is-playing');
+            btn.querySelector('.play-icon').style.display = '';
+            btn.querySelector('.pause-icon').style.display = 'none';
+            currentAudio = null;
+            currentBtn = null;
+        };
+    });
+});
